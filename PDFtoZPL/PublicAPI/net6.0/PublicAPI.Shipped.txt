@@ -11,7 +11,7 @@ PDFtoZPL.DitheringKind.FloydSteinberg = 1 -> PDFtoZPL.DitheringKind
 PDFtoZPL.DitheringKind.None = 0 -> PDFtoZPL.DitheringKind
 PDFtoZPL.ZplOptions
 PDFtoZPL.ZplOptions.ZplOptions() -> void
-PDFtoZPL.ZplOptions.ZplOptions(PDFtoZPL.BitmapEncodingKind EncodingKind = PDFtoZPL.BitmapEncodingKind.HexadecimalCompressed, bool GraphicFieldOnly = false, bool SetLabelLength = false, byte Threshold = 128, PDFtoZPL.DitheringKind DitheringKind = PDFtoZPL.DitheringKind.None) -> void
+PDFtoZPL.ZplOptions.ZplOptions(PDFtoZPL.BitmapEncodingKind EncodingKind = PDFtoZPL.BitmapEncodingKind.HexadecimalCompressed, bool GraphicFieldOnly = false, bool SetLabelLength = false, byte Threshold = 128, PDFtoZPL.DitheringKind DitheringKind = PDFtoZPL.DitheringKind.None,int PrintCopies = 1) -> void
 PDFtoZPL.ZplOptions.DitheringKind.get -> PDFtoZPL.DitheringKind
 PDFtoZPL.ZplOptions.DitheringKind.init -> void
 PDFtoZPL.ZplOptions.EncodingKind.get -> PDFtoZPL.BitmapEncodingKind
@@ -22,6 +22,8 @@ PDFtoZPL.ZplOptions.SetLabelLength.get -> bool
 PDFtoZPL.ZplOptions.SetLabelLength.init -> void
 PDFtoZPL.ZplOptions.Threshold.get -> byte
 PDFtoZPL.ZplOptions.Threshold.init -> void
+PDFtoZPL.ZplOptions.PrintCopies.get -> int
+PDFtoZPL.ZplOptions.PrintCopies.init -> void
 PDFtoZPL.IZplOptions
 PDFtoZPL.IZplOptions.DitheringKind.get -> PDFtoZPL.DitheringKind
 PDFtoZPL.IZplOptions.DitheringKind.init -> void
@@ -33,6 +35,8 @@ PDFtoZPL.IZplOptions.SetLabelLength.get -> bool
 PDFtoZPL.IZplOptions.SetLabelLength.init -> void
 PDFtoZPL.IZplOptions.Threshold.get -> byte
 PDFtoZPL.IZplOptions.Threshold.init -> void
+PDFtoZPL.IZplOptions.PrintCopies.get -> int
+PDFtoZPL.IZplOptions.PrintCopies.init -> void
 PDFtoZPL.PdfOptions
 PDFtoZPL.PdfOptions.AntiAliasing.get -> PDFtoImage.PdfAntiAliasing
 PDFtoZPL.PdfOptions.AntiAliasing.init -> void

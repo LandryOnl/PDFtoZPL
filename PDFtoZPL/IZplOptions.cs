@@ -29,5 +29,9 @@
         /// The dithering algorithm used when downsampling to a 1-bit monochrome image.
         /// </summary>
         DitheringKind DitheringKind { get; init; }
+        /// <summary>
+        /// print copies define ,default 1
+        /// </summary>
+        int PrintCopies { get; init; }
     }
 }

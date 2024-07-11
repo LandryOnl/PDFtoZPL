@@ -388,10 +388,17 @@ namespace PDFtoZPL
                 {
                     throw new ArgumentOutOfRangeException(nameof(zplOptions), $"Unknown {nameof(BitmapEncodingKind)} '{zplOptions.EncodingKind}'.");
                 }
-
+                string printCopiesZpl=string.Empty;
+                if (zplOptions.PrintCopies > 1) 
+                {
+                    printCopiesZpl = $"\r\n^PQ{zplOptions.PrintCopies},0,1,Y\r\n";
+                }
                 // build the Graphic Field (^GFA) command
                 string graphicField = $"^GFA,{binaryByteCount},{binaryByteCount},{bytesPerRow},{bitmapPayload}";
-
+                if (zplOptions.PrintCopies > 1) 
+                {
+                    graphicField = printCopiesZpl+graphicField ;
+                }
                 if (zplOptions.GraphicFieldOnly)
                     return graphicField;
 

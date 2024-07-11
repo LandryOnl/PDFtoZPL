@@ -8,17 +8,19 @@
     /// <param name="SetLabelLength">If <see langword="true"/> then the returned ZPL sets the label length to the height of the image, using the ^LL command. Otherwise it returns ^XA^GF^FS^XZ.</param>
     /// <param name="Threshold">The threshold below which a pixel is considered black. Lower values mean darker, higher mean lighter.</param>
     /// <param name="DitheringKind">The dithering algorithm used when downsampling to a 1-bit monochrome image.</param>
+    /// <param name="PrintCopies">The print copies default 1.</param>
     public readonly record struct ZplOptions(
         BitmapEncodingKind EncodingKind = BitmapEncodingKind.HexadecimalCompressed,
         bool GraphicFieldOnly = false,
         bool SetLabelLength = false,
         byte Threshold = 128,
-        DitheringKind DitheringKind = DitheringKind.None) : IZplOptions
+        DitheringKind DitheringKind = DitheringKind.None,
+        int PrintCopies = 1) : IZplOptions
     {
         /// <summary>
         /// Constructs <see cref="ZplOptions"/> with default values.
         /// </summary>
-        public ZplOptions() : this(BitmapEncodingKind.HexadecimalCompressed, false, false, 128, DitheringKind.None) { }
+        public ZplOptions() : this(BitmapEncodingKind.HexadecimalCompressed, false, false, 128, DitheringKind.None,1) { }
     }
 }
 #if NETSTANDARD || MONOANDROID || NETFRAMEWORK
